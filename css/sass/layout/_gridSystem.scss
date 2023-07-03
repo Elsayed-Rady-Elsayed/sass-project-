@@ -1,0 +1,22 @@
+@import "../helpers/variables";
+.container {
+  padding: 30px;
+  width: 950px;
+  height: fit-content;
+  background-color: #f0f0f8;
+  box-shadow: $boxShadow;
+  border-radius: 20px;
+  display: grid;
+  grid-template: auto repeat(2, 1fr) / auto repeat(3, 1fr);
+  gap: 25px;
+  position: relative;
+  @media #{$minSmall} {
+    width: 750px;
+  }
+  @media #{$minMedium} {
+    width: 970px;
+  }
+  @media #{$minLarge} {
+    width: 1190px;
+  }
+}

@@ -1,0 +1,51 @@
+header {
+  @include flex(row, space-between, center);
+  grid-column: 1 / 4 span;
+  color: $grayColor;
+  h1 {
+    text-transform: uppercase;
+    font-size: 24px;
+  }
+  .details {
+    @include flex(row, center, center);
+    gap: 10px;
+    span {
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .notification {
+      position: relative;
+      &::after {
+        content: "2";
+        position: absolute;
+        top: -4px;
+        right: 0;
+        background-color: green;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        color: $white;
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+    .myInfo {
+      @include flex(row, center, center);
+      gap: 20px;
+      span {
+        font-weight: 600;
+        cursor: pointer;
+        text-transform: capitalize;
+      }
+      .img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        @include backgroundImg(
+          "https://scontent-hbe1-1.xx.fbcdn.net/v/t39.30808-6/328124151_1333319160851267_2137672309798648403_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=x_aHbvnKHQkAX-EAeeL&_nc_ht=scontent-hbe1-1.xx&oh=00_AfAajFBR1DdKVAABXChmVuyBMp6igx6ojJYOb-1T9yAJ9g&oe=64A7BA8B"
+        );
+        box-shadow: $boxShadow;
+      }
+    }
+  }
+}

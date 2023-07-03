@@ -1,0 +1,47 @@
+@mixin minMedium() {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin overlay($bg-color) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $bg-color;
+}
+
+@mixin prefixer($prop, $val, $prefix) {
+  @each $p in $prefix {
+    #{'-' + $p + "-" +$prop }: $val;
+  }
+  #{$prop}: $val;
+}
+
+@mixin animation($keyName) {
+  @-webkit-keyframes #{$keyName} {
+    @content;
+  }
+  @-moz-keyframes #{$keyName} {
+    @content;
+  }
+  @keyframes #{$keyName} {
+    @content;
+  }
+}
+
+@mixin flex($dirct, $justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $dirct;
+}
+
+@mixin backgroundImg($img) {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url($img);
+}

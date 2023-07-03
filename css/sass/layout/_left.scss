@@ -1,0 +1,54 @@
+.left {
+  @include flex(column, space-between, center);
+  grid-area: 2 / 1 / 4 / 1;
+  .icons {
+    @include flex(column, center, center);
+    row-gap: 20px;
+    span {
+      width: 100%;
+      @include flex(row, space-between, center);
+      cursor: pointer;
+      gap: 20px;
+      .notify {
+        @include flex(row, center, center);
+        width: 50px;
+        font-size: 15px;
+        height: 30px;
+        box-shadow: $boxShadow;
+        border-radius: 50%;
+        color: $mainColor;
+      }
+      span {
+        font-weight: 600;
+        font-size: 14px;
+        color: $grayColor;
+        cursor: pointer;
+      }
+    }
+    .search .notify {
+      color: $white;
+      background-color: green;
+    }
+  }
+  .social {
+    @include flex(column, center, center);
+    gap: 20px;
+    span {
+      @include flex(row, center, center);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      box-shadow: $boxShadowScandry;
+      color: $white;
+    }
+    span:nth-of-type(1) {
+      background-color: $pink;
+    }
+    span:nth-of-type(2) {
+      background-color: $blue;
+    }
+    span:nth-of-type(3) {
+      background-color: $orange;
+    }
+  }
+}

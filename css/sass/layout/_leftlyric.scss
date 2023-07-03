@@ -1,0 +1,88 @@
+.leftTow {
+  width: fit-content;
+  @include flex(column, space-between, center);
+  grid-area: 2 / 2 / 4 / 2;
+  .text {
+    width: 60%;
+    h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: $grayColor;
+      margin-bottom: 14px;
+    }
+    span {
+      color: $grayColor;
+      font-weight: 600;
+    }
+    p {
+      color: $brown;
+      font-weight: 600;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  }
+  .play {
+    margin-top: 20px;
+    text-align: center;
+    padding: 15px 20px;
+    box-shadow: $boxShadow;
+    @include flex(column, center, center);
+    gap: 0px;
+    border-radius: 20px;
+    .icon {
+      width: 80%;
+      height: 90px;
+      background-position: center;
+      background-size: cover;
+      background-image: url("https://i0.wp.com/css-tricks.com/wp-content/uploads/2019/11/audio-03.png?ssl=1");
+    }
+    .img {
+      display: block;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      @include backgroundImg(
+        "https://m.media-amazon.com/images/I/61jNfu1D+HL._UF1000,1000_QL80_.jpg"
+      );
+    }
+    .text {
+      p {
+        width: 100% !important;
+        font-weight: 700;
+        color: black;
+        font-size: 15px;
+      }
+      span {
+        font-size: 13px;
+        font-weight: bold;
+        color: $grayColor;
+      }
+    }
+    .control {
+      gap: 20px;
+      @include flex(row, center, center);
+      span {
+        width: 30px;
+        height: 30px;
+        @include flex(row, center, center);
+        border-radius: 50%;
+        box-shadow: $boxShadow;
+        font-size: 17px;
+        transition: $trans;
+        cursor: pointer;
+        &:hover {
+          background-color: black;
+          color: $white;
+          box-shadow: $boxShadowScandry;
+        }
+      }
+      span:nth-of-type(2) {
+        width: 40px;
+        height: 40px;
+        color: $white;
+        background-color: green;
+      }
+    }
+  }
+  width: fit-content;
+}

@@ -1,0 +1,57 @@
+.main {
+  grid-area: 2 / 3/ 4/3;
+  @include flex(column, space-between, center);
+  .contImg {
+    position: relative;
+    width: fit-content;
+    border-radius: 50%;
+    border: 5px solid #ddd;
+    padding: 12px;
+    z-index: 23;
+    .img {
+      position: relative;
+      width: 170px;
+      height: 170px;
+      cursor: no-drop;
+      transition: $trans;
+      @include backgroundImg(
+        "https://m.media-amazon.com/images/I/61jNfu1D+HL._UF1000,1000_QL80_.jpg"
+      );
+      border-radius: 50%;
+      animation: rotateimg infinite 10s linear;
+    }
+  }
+  .divs {
+    @include flex(row, center, center);
+    gap: 20px;
+    .div {
+      width: 150px;
+      padding: 15px;
+      box-shadow: $boxShadow;
+      border-radius: 20px;
+      h3 {
+        font-size: 30px;
+        font-weight: 900;
+        color: $mainColor;
+        margin: 10px 0;
+      }
+      p {
+        color: $grayColor;
+        line-height: 1.7;
+      }
+      span {
+        @include flex(row, flex-start, center);
+        gap: 10px;
+        color: $grayColor;
+      }
+    }
+  }
+}
+@keyframes rotateimg {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
